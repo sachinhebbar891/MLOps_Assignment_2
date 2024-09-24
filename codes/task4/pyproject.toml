@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "assignment2"
+version = "1.0.0"
+requires-python = ">=3.8.1,<4"
+dependencies = [
+    "Flask>=3.0.2,<4",
+    "flaml",
+    "lightgbm",
+    "joblib",
+    "scikit-learn",
+    "numpy",
+    "pandas"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<9",
+]
+
+[tool.setuptools.package-data]
+"*" = ["**/static/**/*", "**/templates/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
